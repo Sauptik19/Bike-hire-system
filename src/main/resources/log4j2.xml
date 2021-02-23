@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration xmlns="http://logging.apache.org/log4j/2.0/config">
+    <Properties>
+        <Property name="basePath">../logs</Property>
+    </Properties>
+    <Appenders>
+        <!-- File Appender -->
+        <File name="FILE" fileName="${basePath}/logfile.log" append="true">
+            <PatternLayout pattern="%-5p | %d{yyyy-MM-dd HH:mm:ss} | [%t] %C{2} (%F:%L) - %m%n" />
+        </File>
+    </Appenders>
+    <Loggers>
+        <Logger name="edu.srh.bikehire.dao.impl" level="TRACE" additivity="false">
+        	<Appender-ref ref="FILE" level="TRACE"/>
+        </Logger>
+        <Logger name="edu.srh.bikehire.service.impl" level="TRACE" additivity="false">
+        	<Appender-ref ref="FILE" level="TRACE"/>
+        </Logger>
+        <Logger name="edu.srh.bikehire.jasper" level="TRACE" additivity="false">
+        	<Appender-ref ref="FILE" level="TRACE"/>
+        </Logger>
+    </Loggers>
+</Configuration>
